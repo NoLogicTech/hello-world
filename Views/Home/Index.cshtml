@@ -1,5 +1,133 @@
-﻿@{
+﻿@model CNRegistoHorasMVC.Models.Cliente
+
+@{
     ViewData["Title"] = "Clientes";
 }
 
-<h1>@ViewData["Title"]</h1>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Clientes</title>
+</head>
+
+<body>
+
+    <h1>@ViewData["Title"]</h1>
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-row mb-3">
+            <div class="input-group col-md-6">
+                <div class="input-group-prepend">
+                    <label for="inputClienteID" class="input-group-text" id="basic-addon1">NIPC/NIF</label>
+                </div>
+                <input id="inputClienteID" asp-for="ClienteId" class="form-control" placeholder="999999990" />
+            </div>
+            <div class="input-group col-md-6">
+                <div class="input-group-prepend">
+                    <label for="inputClienteErpid" class="input-group-text" id="basic-addon1">ERP ID</label>
+                </div>
+                <input id="inputClienteErpid" asp-for="ClienteErpid" class="form-control" placeholder="999" />
+
+            </div>
+            <span asp-validation-for="ClienteId" class="text-danger"></span>
+            <span asp-validation-for="ClienteErpid" class="text-danger"></span>
+        </div>
+
+        <div class="form-row mb-3">
+            <div class="input-group col-md-12">
+                <div class="input-group-prepend">
+                    <label for="inputClienteNome" class="input-group-text" id="basic-addon1">Nome</label>
+                </div>
+                <input id="inputClienteNome" asp-for="ClienteNome" class="form-control" placeholder="Empresa ABC" />
+
+            </div>
+            <span asp-validation-for="ClienteNome" class="text-danger"></span>
+        </div>
+
+        <div class="form-row mb-3">
+            <div class="input-group col-md-12">
+                <div class="input-group-prepend">
+                    <label for="inputClienteEmail" class="input-group-text" id="basic-addon1">E-Mail</label>
+                </div>
+                <input id="inputClienteEmail" asp-for="ClienteEmail" class="form-control"
+                    placeholder="exemplo@exemplo.pt" />
+                <span asp-validation-for="ClienteEmail" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row mb-3">
+            <div class="input-group col-md-12">
+                <div class="input-group-prepend">
+                    <label for="inputClienteDescricao" class="input-group-text" id="basic-addon1">Descrição</label>
+                </div>
+                <input id="inputClienteDescricao" asp-for="ClienteDescricao" class="form-control"
+                    placeholder="Empresa líder no ramo de X" />
+                <span asp-validation-for="ClienteDescricao" class="text-danger"></span>
+            </div>
+        </div>
+
+        <input type="submit" value="Adicionar novo cliente" class="btn btn-primary" />
+        <div class="form-row mb-3"></div>
+
+    </form>
+
+    <table class="table">
+        <thead class="thead-inverse">
+            <th>ID</th>
+            <th>ERP ID</th>
+            <th>Nome</th>
+            <th>E-Mail</th>
+        </thead>
+        <tbody>
+            @foreach (var item in @ViewBag.listadeclientes)
+            {
+                <tr>
+                    <td>@item.ClienteId</td>
+                    <td>@item.ClienteErpid</td>
+                    <td>@item.ClienteNome</td>
+                    <td>@item.ClienteEmail</td>
+                    <td>
+                        <form method="post">
+                            
+                            <!-- ---------------- EDITAR ---------------- -->
+                            <button class="btn btn-primary" role="button" name="editarId" asp-action="Edit" asp-route-id="@item.ClienteId">Editar</button>
+
+
+
+                                <!-- ---------------- APAGAR ---------------- -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Apagar</button>
+                            <div class="modal fade" id="deleteModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Apagar cliente</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Tem a certeza que deseja apagar o cliente?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-danger" role="button" name="pagarId" asp-action="Delete" asp-route-id="@item.ClienteId">Apagar</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

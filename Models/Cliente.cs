@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace CNRegistoHorasMVC.Models
 {
-    public partial class Cliente
+    public class Cliente
     {
         public Cliente()
         {
