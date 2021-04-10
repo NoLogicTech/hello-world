@@ -85,7 +85,8 @@
         </thead>
         <tbody>
             @foreach (var item in @ViewBag.listadeclientes)
-            {
+            {@("#editModal" + @item.ClienteId)
+             @("#deleteModal" + @item.ClienteId)
                 <tr>
                     <td>@item.ClienteId</td>
                     <td>@item.ClienteErpid</td>
@@ -93,33 +94,31 @@
                     <td>@item.ClienteEmail</td>
                     <td>
                         <form method="post">
-                            
+
                             <!-- ---------------- EDITAR ---------------- -->
-                            <button class="btn btn-primary" role="button" name="editarId" asp-action="Edit" asp-route-id="@item.ClienteId">Editar</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="">Editar</button>
 
 
-
-                                <!-- ---------------- APAGAR ---------------- -->
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Apagar</button>
-                            <div class="modal fade" id="deleteModal" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                <div class="modal-content">
+                            <!-- ---------------- APAGAR ---------------- -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Apagar</button>
+                            <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Apagar cliente</h5>
+                                            <h5 class="modal-title">@item.ClienteNome</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Tem a certeza que deseja apagar o cliente?</p>
+                                            <p>Modal body text goes here.</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button class="btn btn-danger" role="button" name="pagarId" asp-action="Delete" asp-route-id="@item.ClienteId">Apagar</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </form>

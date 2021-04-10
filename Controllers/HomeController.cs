@@ -85,5 +85,24 @@ namespace CNRegistoHorasMVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-    }
-}
+        // -----------> SECÇÃO PARA EDITAR CLIENTES
+
+        // ---> METODO GET
+        public IActionResult Edit()
+        {
+
+            ViewBag.listadeclientes = _context.Cliente.ToList();
+            return View();
+
+        }
+
+        // ---> METODO POST
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditConfirmed(int id)
+        {
+
+            Console.WriteLine(id);
+            return RedirectToAction(nameof(Index));
+        }
+    }}
