@@ -137,3 +137,7 @@ C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\re
 C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\CNRegistoHorasMVC.pdb
 C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\CNRegistoHorasMVC.genruntimeconfig.cache
 C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\bin\Debug\net5.0\TriggerMe.VATChecker.dll
+C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\CNRegistoHorasMVC.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll

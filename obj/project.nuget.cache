@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "mT58YFvvQfD7+I9X0jgS6waFzmJ60VTcdqSYOoAsqdB4an+xnDsQg+awEeVLRTlui5ampBvQFNhS7GRvlQlwVg==",
+  "dgSpecHash": "HcsHVt7vSopx72qi5G9kOLf1Wn+D0j8DQmTEGyt5OZMiFilDWHKeOFj6BDfpeFOclDOJRdYVKsyvadvdCpNebg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\CNRegistoHorasMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\fluentvalidation\\10.0.2\\fluentvalidation.10.0.2.nupkg.sha512",
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.0.2\\fluentvalidation.aspnetcore.10.0.2.nupkg.sha512",
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.0.2\\fluentvalidation.dependencyinjectionextensions.10.0.2.nupkg.sha512",
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\jquery\\1.4.4\\jquery.1.4.4.nupkg.sha512",
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\jquery.validation\\1.19.3\\jquery.validation.1.19.3.nupkg.sha512",
     "C:\\Users\\Miguel Correia\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Miguel Correia\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Miguel Correia\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

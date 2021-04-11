@@ -33,8 +33,8 @@ namespace CNRegistoHorasMVC.Controllers
             }
             else
             {
-
-                ViewBag.listadeclientes = _context.Cliente.ToList().Where(s => s.ClienteNome.Contains(filtrar) || s.ClienteId.ToString().Contains(filtrar));
+                filtrar = filtrar.ToLower();
+                ViewBag.listadeclientes = _context.Cliente.ToList().Where(s => s.ClienteNome.ToLower().Contains(filtrar) || s.ClienteId.ToString().ToLower().Contains(filtrar));
             }
 
             var model = new Cliente()
@@ -158,7 +158,8 @@ namespace CNRegistoHorasMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cliente);
+            
+            return RedirectToAction(nameof(Index));
         }
 
         private bool ClienteExists(int id)

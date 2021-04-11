@@ -11,6 +11,10 @@ using Microsoft.Extensions.Hosting;
 using CNRegistoHorasMVC.Models;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using FluentValidation.Validators;
+
 
 namespace CNRegistoHorasMVC
 {
@@ -30,6 +34,14 @@ namespace CNRegistoHorasMVC
 
             var connection = "Data Source=172.31.55.155;Initial Catalog=CNRegistoHoras;Persist Security Info=True;User ID=sa;Password=SqlCascata@1;";
             services.AddDbContext<CNRegistoHorasContext>(options => options.UseSqlServer(connection));
+
+            services.AddMvc(setup =>
+            {
+                //...mvc setup...
+            }).AddFluentValidation();
+
+            services.AddTransient<IValidator<Cliente>, ClienteValidator>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

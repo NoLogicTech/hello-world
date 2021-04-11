@@ -44,8 +44,8 @@
                 </div>
                 <input id="inputClienteErpid" asp-for="ClienteErpid" class="form-control" placeholder="999" />
             </div>
-            <span asp-validation-for="ClienteId" class="text-danger"></span>
-            <span asp-validation-for="ClienteErpid" class="text-danger"></span>
+            <span style="margin-left: 8pt;" asp-validation-for="ClienteId" class="text-danger"></span>
+            <span style="margin-left: 8pt;" asp-validation-for="ClienteErpid" class="text-danger"></span>
         </div>
 
         <div class="form-row mb-3">
@@ -53,11 +53,9 @@
                 <div class="input-group-prepend">
                     <label for="inputClienteNome" class="input-group-text" id="basic-addon1">Nome</label>
                 </div>
-                <input id="inputClienteNome" asp-for="ClienteNome" class="form-control" placeholder="Empresa ABC"
-                    value="@Model.ClienteNome" />
-
+                <input id="inputClienteNome" asp-for="ClienteNome" class="form-control" placeholder="Empresa ABC" value="@Model.ClienteNome" />
             </div>
-            <span asp-validation-for="ClienteNome" class="text-danger"></span>
+            <span style="margin-left: 8pt;" asp-validation-for="ClienteNome" class="text-danger"></span>
         </div>
 
         <div class="form-row mb-3">
@@ -65,10 +63,9 @@
                 <div class="input-group-prepend">
                     <label for="inputClienteEmail" class="input-group-text" id="basic-addon1">E-Mail</label>
                 </div>
-                <input id="inputClienteEmail" asp-for="ClienteEmail" class="form-control"
-                    placeholder="exemplo@exemplo.pt" />
-                <span asp-validation-for="ClienteEmail" class="text-danger"></span>
+                <input id="inputClienteEmail" asp-for="ClienteEmail" class="form-control" placeholder="exemplo@exemplo.pt" />
             </div>
+            <span asp-validation-for="ClienteEmail" class="text-danger"></span>
         </div>
 
         <div class="form-row mb-3">

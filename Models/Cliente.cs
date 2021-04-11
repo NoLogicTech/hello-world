@@ -15,10 +15,8 @@ namespace CNRegistoHorasMVC.Models
             Servico = new HashSet<Servico>();
         }
 
-        [Required(ErrorMessage="Tem de colocar o número de contribuinte!")]
         public int ClienteId { get; set; }
 
-        [Required(ErrorMessage="Tem de colocar o nome do cliente!")]
         public string ClienteNome { get; set; }
         public string ClienteAbreviatura { get; set; }
         public string ClienteDescricao { get; set; }
