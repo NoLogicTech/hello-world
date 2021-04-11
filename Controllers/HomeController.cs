@@ -24,7 +24,7 @@ namespace CNRegistoHorasMVC.Controllers
         }
 
 
-        // LISTAR LISTA DE CLIENTES NA TABELA
+        // LISTA DE CLIENTES NA TABELA , COM FILTRO, E DEVOLUÇÃO DO NOME, NO CASO DE TER PEDIDO PARA REGISTAR NOME DO VIES
         public IActionResult Index(string filtrar, string nome, string contribuinte)
         {
             if (string.IsNullOrEmpty(filtrar))
@@ -193,7 +193,6 @@ namespace CNRegistoHorasMVC.Controllers
 
         public IActionResult Vies()
         {
-
 
             return View();
 
