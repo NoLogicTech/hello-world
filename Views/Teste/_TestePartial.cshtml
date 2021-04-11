@@ -1,12 +1,12 @@
 ﻿@model CNRegistoHorasMVC.Models.Cliente
 
-    <table class="table">
-        <thead class="thead-inverse">
-            <th style="width: 10%">ID</th>
-            <th style="width: 5%">ERP ID</th>
-            <th style="width: 40%">Nome</th>
-            <th style="width: 30%">E-Mail</th>
-            <th style="width: 15%"></th>
+    <table class="table table-sm table-hover ">
+        <thead class="thead-inverse thead-light" >
+            <th style="width: 15%; height: 30pt;" class="text-center align-self-center">ID</th>
+            <th style="width: 10%; height: 30pt;" class="text-center align-self-center">ERP ID</th>
+            <th style="width: 35%; height: 30pt;" class="text-center align-self-center">Nome</th>
+            <th style="width: 25%; height: 30pt;" class="text-center align-self-center">E-Mail</th>
+            <th style="width: 15%; height: 30pt;" class="text-center align-self-center"></th>
         </thead>
         <tbody>
             @foreach (var item in @ViewBag.listadeclientes)
@@ -14,7 +14,7 @@
                 string editModal = "editModal" + @item.ClienteId;
                 string deleteModal = "deleteModal" + @item.ClienteId;
                 <tr>
-                    <td>@item.ClienteId</td>
+                    <td class="align-self-center">@item.ClienteId</td>
                     <td>@item.ClienteErpid</td>
                     <td>@item.ClienteNome</td>
                     <td>@item.ClienteEmail</td>
@@ -22,8 +22,8 @@
                         <form method="post">
 
                             <!-- ---------------- EDITAR ---------------- -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#@editModal" ><i class="far fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#@deleteModal"><i class="far fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#@editModal" ><span style="color: Dodgerblue;"><i class="fas fa-pencil-alt"></i></span></button>
+                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#@deleteModal"><span style="color: Tomato;"><i class="fas fa-trash"></i></span></button>
                             <div class="modal fade" tabindex="-1" role="dialog" id="@editModal">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -98,10 +98,8 @@
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" asp-action="Edit"
-                                            asp-route-id="@item.ClienteId">Guardar</button>
-                                            <button type="submit" class="btn btn-secondary"
-                                            data-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary" asp-action="Edit" asp-route-id="@item.ClienteId">Guardar</button>
+                                            <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +121,7 @@
                                         </div>
                                         <form method="post">
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-danger trash" asp-action="Delete" asp-route-id="@item.ClienteId">Apagar</button>
+                                                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ClienteId">Apagar</button>
                                                 <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                             </div>
                                         </form>

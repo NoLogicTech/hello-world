@@ -132,7 +132,7 @@ namespace CNRegistoHorasMVC.Controllers
         // ---> METODO POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClienteId,ClienteNome,ClienteAbreviatura,ClienteDescricao,ClienteErpid,ClienteEmail")] Cliente cliente)
+        public async Task<IActionResult> Edit(int? id, [Bind("ClienteId,ClienteNome,ClienteAbreviatura,ClienteDescricao,ClienteErpid,ClienteEmail")] Cliente cliente)
         {
             if (id != cliente.ClienteId)
             {
