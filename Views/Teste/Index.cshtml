@@ -1,0 +1,109 @@
+﻿@model CNRegistoHorasMVC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Testes";
+
+    string contribuinte;
+    if (Model.ClienteId.ToString() == "0")
+    {
+        contribuinte = "";
+    }
+    else
+    {
+        contribuinte = Model.ClienteId.ToString();
+    }
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Testes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#filtrar').keyup(function () {
+                var str = $("#filtrar").val();
+                $("#partial").load("/Teste/GetPartial",{ filtrar: str });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <h1>@ViewData["Title"]</h1>
+
+    <form asp-action="Create" name="registration">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-row mb-3">
+            <div class="input-group col-md-6">
+                <div class="input-group-prepend">
+                    <label for="inputClienteID" class="input-group-text" id="basic-addon1">NIPC/NIF</label>
+                </div>
+                <input id="inputClienteID" asp-for="ClienteId" class="form-control" placeholder="999999990" value="@contribuinte" />
+                <button type="submit" class="btn btn-success" asp-action="Vies">V</button>
+            </div>
+            <div class="input-group col-md-6">
+                <div class="input-group-prepend">
+                    <label for="inputClienteErpid" class="input-group-text" id="basic-addon1">ERP ID</label>
+                </div>
+                <input id="inputClienteErpid" asp-for="ClienteErpid" class="form-control" placeholder="999" />
+            </div>
+            <span style="margin-left: 8pt;" asp-validation-for="ClienteId" class="text-danger"></span>
+            <span style="margin-left: 8pt;" asp-validation-for="ClienteErpid" class="text-danger"></span>
+        </div>
+
+        <div class="form-row mb-3">
+            <div class="input-group col-md-12">
+                <div class="input-group-prepend">
+                    <label for="inputClienteNome" class="input-group-text" id="basic-addon1">Nome</label>
+                </div>
+                <input id="inputClienteNome" asp-for="ClienteNome" class="form-control" placeholder="Empresa ABC" value="@Model.ClienteNome" />
+            </div>
+            <span style="margin-left: 8pt;" asp-validation-for="ClienteNome" class="text-danger"></span>
+        </div>
+
+        <div class="form-row mb-3">
+            <div class="input-group col-md-12">
+                <div class="input-group-prepend">
+                    <label for="inputClienteEmail" class="input-group-text" id="basic-addon1">E-Mail</label>
+                </div>
+                <input id="inputClienteEmail" asp-for="ClienteEmail" class="form-control" placeholder="exemplo@exemplo.pt" />
+            </div>
+            <span asp-validation-for="ClienteEmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-row mb-3">
+            <div class="input-group col-md-12">
+                <div class="input-group-prepend">
+                    <label for="inputClienteDescricao" class="input-group-text" id="basic-addon1">Descrição</label>
+                </div>
+                <input id="inputClienteDescricao" asp-for="ClienteDescricao" class="form-control" placeholder="Empresa líder no ramo de X" />
+                <span asp-validation-for="ClienteDescricao" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-row mb-3">
+            <div class="input-group col-md-6">
+                <input type="submit" value="Adicionar novo cliente" class="btn btn-primary" />
+            </div>
+            <form method="post">
+                <div class="input-group col-md-6">
+                    <!--<button type="submit" class="btn btn-secondary" asp-action="Index" style="margin-right: 5pt;">Filtrar</button>-->
+                    <input type="text" class="form-control" placeholder="Filtrar tabela" name="filtrar" id="filtrar">
+                </div>
+            </form>
+        </div>
+        <div class="form-row mb-3"></div>
+    </form>
+    <div id="partial">
+        @Html.Partial("_TestePartial")
+    </div>
+
+</body>

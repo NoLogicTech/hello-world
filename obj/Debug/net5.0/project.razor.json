@@ -15639,13 +15639,23 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\Views\\Teste\\Index.cshtml",
+      "TargetPath": "Views\\Teste\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\Views\\Cliente\\Index.cshtml",
+      "TargetPath": "Views\\Cliente\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\Views\\Teste\\_TestePartial.cshtml",
+      "TargetPath": "Views\\Teste\\_TestePartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],

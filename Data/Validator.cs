@@ -16,7 +16,6 @@ namespace CNRegistoHorasMVC.Models
             //--> REGRAS DE VALIDAÇÃO PARA CLIENTES
 
             RuleFor(cliente => cliente.ClienteId).NotNull().WithMessage("Tem de colocar o número de contribuinte!");
-            RuleFor(cliente => cliente.ClienteId).GreaterThanOrEqualTo(9).WithMessage("O número de contribuinte não está correcto!").LessThanOrEqualTo(9).WithMessage("O número de contribuinte não está correcto!");
             
             RuleFor(cliente => cliente.ClienteNome).NotNull().WithMessage("Tem de colocar o nome do cliente!");
         }
