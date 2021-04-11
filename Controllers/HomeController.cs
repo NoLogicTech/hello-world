@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CNRegistoHorasMVC.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using TriggerMe.VAT;
 
 namespace CNRegistoHorasMVC.Controllers
 {
@@ -23,12 +25,25 @@ namespace CNRegistoHorasMVC.Controllers
 
 
         // LISTAR LISTA DE CLIENTES NA TABELA
-        public IActionResult Index()
+        public IActionResult Index(string filtrar, string nome, string contribuinte)
         {
+            if (string.IsNullOrEmpty(filtrar))
+            {
+                ViewBag.listadeclientes = _context.Cliente.ToList();
+            }
+            else
+            {
 
-            ViewBag.listadeclientes = _context.Cliente.ToList();
-            return View();
+                ViewBag.listadeclientes = _context.Cliente.ToList().Where(s => s.ClienteNome.Contains(filtrar) || s.ClienteId.ToString().Contains(filtrar));
+            }
 
+            var model = new Cliente()
+            {
+                ClienteNome = nome,
+                ClienteId = Convert.ToInt32(contribuinte)
+            };
+
+            return View(model);
         }
 
         // -----------> SECÇÃO PARA ADICIONAR NOVO CLIENTE
@@ -52,7 +67,14 @@ namespace CNRegistoHorasMVC.Controllers
             }
 
             ViewBag.listadeclientes = _context.Cliente.ToList();
-            return RedirectToAction(nameof(Index));
+
+            var model = new Cliente()
+            {
+                ClienteNome = "",
+                ClienteId = 0
+            };
+
+            return View("Index", model);
         }
 
         // -----------> SECÇÃO PARA APAGAR CLIENTE
@@ -71,6 +93,8 @@ namespace CNRegistoHorasMVC.Controllers
                 return NotFound();
             }
 
+            Console.WriteLine(id);
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -82,27 +106,106 @@ namespace CNRegistoHorasMVC.Controllers
             var cliente = await _context.Cliente.FindAsync(id);
             _context.Cliente.Remove(cliente);
             await _context.SaveChangesAsync();
+            Console.WriteLine(id);
             return RedirectToAction(nameof(Index));
         }
 
         // -----------> SECÇÃO PARA EDITAR CLIENTES
 
         // ---> METODO GET
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cliente = await _context.Cliente.FindAsync(id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+            return View(cliente);
+        }
+
+        // ---> METODO POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ClienteId,ClienteNome,ClienteAbreviatura,ClienteDescricao,ClienteErpid,ClienteEmail")] Cliente cliente)
+        {
+            if (id != cliente.ClienteId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(cliente);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ClienteExists(cliente.ClienteId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(cliente);
+        }
+
+        private bool ClienteExists(int id)
+        {
+            return _context.Cliente.Any(e => e.ClienteId == id);
+        }
+
+        // -----------> SECÇÃO PARA FILTRAR TABELA
+
+        // ---> METODO GET
+        public IActionResult Filtrar()
         {
 
-            ViewBag.listadeclientes = _context.Cliente.ToList();
             return View();
 
         }
 
-        // ---> METODO POST
-        [HttpPost, ActionName("Edit")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditConfirmed(int id)
+        //---> METODO POST
+        [HttpPost, ActionName("Filtrar")]
+        public async Task<IActionResult> FiltrarConfirmed()
         {
+            var model = _context.Cliente.ToList();
 
-            Console.WriteLine(id);
+            Console.WriteLine("Fui clicado POST");
+
+            ViewBag.listadeclientes = await _context.Cliente.ToListAsync();
+
             return RedirectToAction(nameof(Index));
         }
-    }}
+
+        // -----------> SECÇÃO PARA IR BUSCAR DADOS AO VIES
+
+        public IActionResult Vies()
+        {
+
+
+            return View();
+
+        }
+
+        [HttpPost, ActionName("Vies")]
+        public async Task<IActionResult> ViesConfirmed(int ClienteId, string ClienteNome)
+        {
+            var vatQuery = new VATQuery();
+            var vatResult = await vatQuery.CheckVATNumberAsync("PT", ClienteId.ToString());
+
+            return RedirectToAction(nameof(Index), new { nome = vatResult.Name, contribuinte = vatResult.VatNumber });
+        }
+    }
+}

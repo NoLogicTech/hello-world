@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+gQ9GgiuBCT155fd+6gXe6sR6UFZat9fhPmgulhjTFurJvpLRbwW/F5dDc8/Ysyk2TxsX6llsjp98CiyJtthqA==",
+  "dgSpecHash": "mT58YFvvQfD7+I9X0jgS6waFzmJ60VTcdqSYOoAsqdB4an+xnDsQg+awEeVLRTlui5ampBvQFNhS7GRvlQlwVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\CNRegistoHorasMVC.csproj",
   "expectedPackageFiles": [
@@ -162,7 +162,8 @@
     "C:\\Users\\Miguel Correia\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Miguel Correia\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Miguel Correia\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Miguel Correia\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Miguel Correia\\.nuget\\packages\\triggerme.vatchecker\\0.0.3\\triggerme.vatchecker.0.0.3.nupkg.sha512"
   ],
   "logs": []
 }

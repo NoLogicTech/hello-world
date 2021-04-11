@@ -2574,6 +2574,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "TriggerMe.VATChecker/0.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TriggerMe.VATChecker.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TriggerMe.VATChecker.dll": {}
+        }
       }
     }
   },
@@ -8464,6 +8473,19 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "TriggerMe.VATChecker/0.0.3": {
+      "sha512": "GV0okncgoHY3XFNZRzvgXLYVVi26JEYn2TyC2b96ISq7Yx3M9tmDEkzqlOTwl7VO60ejQXwm2rngInbAQxe2aw==",
+      "type": "package",
+      "path": "triggerme.vatchecker/0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/TriggerMe.VATChecker.dll",
+        "lib/netstandard2.0/TriggerMe.VATChecker.xml",
+        "triggerme.vatchecker.0.0.3.nupkg.sha512",
+        "triggerme.vatchecker.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -8471,7 +8493,8 @@
       "Microsoft.EntityFrameworkCore >= 3.1.14",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.14",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.14",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "TriggerMe.VATChecker >= 0.0.3"
     ]
   },
   "packageFolders": {
@@ -8535,6 +8558,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "TriggerMe.VATChecker": {
+            "target": "Package",
+            "version": "[0.0.3, )"
           }
         },
         "imports": [

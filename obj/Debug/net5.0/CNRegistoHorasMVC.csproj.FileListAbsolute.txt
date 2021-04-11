@@ -136,3 +136,4 @@ C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\CN
 C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\ref\CNRegistoHorasMVC.dll
 C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\CNRegistoHorasMVC.pdb
 C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\obj\Debug\net5.0\CNRegistoHorasMVC.genruntimeconfig.cache
+C:\Users\Miguel Correia\Documents\Software\CNRegistoHorasMVC\bin\Debug\net5.0\TriggerMe.VATChecker.dll

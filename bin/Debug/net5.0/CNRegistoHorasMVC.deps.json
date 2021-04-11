@@ -37,6 +37,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.14",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.14",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
+          "TriggerMe.VATChecker": "0.0.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -2094,6 +2095,17 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "TriggerMe.VATChecker/0.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/TriggerMe.VATChecker.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/TriggerMe.VATChecker.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4914,6 +4926,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "TriggerMe.VATChecker/0.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GV0okncgoHY3XFNZRzvgXLYVVi26JEYn2TyC2b96ISq7Yx3M9tmDEkzqlOTwl7VO60ejQXwm2rngInbAQxe2aw==",
+      "path": "triggerme.vatchecker/0.0.3",
+      "hashPath": "triggerme.vatchecker.0.0.3.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",
