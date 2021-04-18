@@ -15,9 +15,9 @@ namespace CNRegistoHorasMVC.Models
         {
             //--> REGRAS DE VALIDAÇÃO PARA CLIENTES
 
-            RuleFor(cliente => cliente.ClienteId).NotNull().WithMessage("Tem de colocar o número de contribuinte!");
+            //RuleFor(cliente => cliente.ClienteId).NotNull().WithMessage("Tem de colocar o número de contribuinte!");
             
-            RuleFor(cliente => cliente.ClienteNome).NotNull().WithMessage("Tem de colocar o nome do cliente!");
+            //RuleFor(cliente => cliente.ClienteNome).NotNull().WithMessage("Tem de colocar o nome do cliente!");
         }
         
     }

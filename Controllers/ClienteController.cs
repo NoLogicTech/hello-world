@@ -121,10 +121,12 @@ namespace CNRegistoHorasMVC.Controllers
             }
 
             var cliente = await _context.Cliente.FindAsync(id);
+
             if (cliente == null)
             {
                 return NotFound();
             }
+
             return View(cliente);
         }
 
@@ -135,7 +137,7 @@ namespace CNRegistoHorasMVC.Controllers
         {
             if (id != cliente.ClienteId)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
 
             if (ModelState.IsValid)

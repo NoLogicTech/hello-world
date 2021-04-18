@@ -122,20 +122,27 @@ namespace CNRegistoHorasMVC.Controllers
             }
 
             var cliente = await _context.Cliente.FindAsync(id);
+            
             if (cliente == null)
             {
                 return NotFound();
             }
+            
             return View(cliente);
         }
 
         // ---> METODO POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("ClienteId,ClienteNome,ClienteAbreviatura,ClienteDescricao,ClienteErpid,ClienteEmail")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("ClienteId,ClienteNome,ClienteAbreviatura,ClienteDescricao,ClienteErpid,ClienteEmail")] Cliente cliente)
         {
+            Console.WriteLine("Post");
+
             if (id != cliente.ClienteId)
             {
+
+                Console.WriteLine("Erro 1" + id);
+                Console.WriteLine("Erro 2" + cliente.ClienteId);
                 return NotFound();
             }
 

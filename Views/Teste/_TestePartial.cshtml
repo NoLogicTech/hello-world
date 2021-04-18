@@ -34,7 +34,6 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-
                                             <form asp-action="Edit">
                                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                                 <div class="form-row mb-3">
@@ -43,8 +42,8 @@
                                                             <label for="inputClienteID" class="input-group-text"
                                                             id="basic-addon1">NIPC/NIF</label>
                                                         </div>
-                                                        <input id="inputClienteID" asp-for="ClienteId" class="form-control"
-                                                        value="@item.ClienteId" disabled/>
+                                                        <input id="inputClienteID" asp-for="ClienteId" class="form-control bg-secondary text-light"
+                                                        value="@item.ClienteId" readonly=true/>
                                                     </div>
                                                     <div class="input-group col-md-6">
                                                         <div class="input-group-prepend">
@@ -95,6 +94,7 @@
                                                         class="text-danger"></span>
                                                     </div>
                                                 </div>
+                                                
                                             </form>
                                         </div>
                                         <div class="modal-footer">
