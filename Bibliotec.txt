@@ -1,0 +1,5 @@
+dotnet ef dbcontext scaffold "Data Source=172.31.55.155;Initial Catalog=CNRegistoHoras;Persist Security Info=True;User ID=sa;Password=SqlCascata@1;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 3.1.14
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.1.14
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 3.1.5
+dotnet add package Microsoft.EntityFrameworkCore --version 3.1.14
