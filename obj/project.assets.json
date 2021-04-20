@@ -8626,24 +8626,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Miguel Correia\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\mcorr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\CNRegistoHorasMVC.csproj",
+      "projectUniqueName": "C:\\Users\\mcorr\\OneDrive\\Documentos\\Cursos\\T\\CNRegistoHorasMVC\\CNRegistoHorasMVC.csproj",
       "projectName": "CNRegistoHorasMVC",
-      "projectPath": "C:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\CNRegistoHorasMVC.csproj",
-      "packagesPath": "C:\\Users\\Miguel Correia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Miguel Correia\\Documents\\Software\\CNRegistoHorasMVC\\obj\\",
+      "projectPath": "C:\\Users\\mcorr\\OneDrive\\Documentos\\Cursos\\T\\CNRegistoHorasMVC\\CNRegistoHorasMVC.csproj",
+      "packagesPath": "C:\\Users\\mcorr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mcorr\\OneDrive\\Documentos\\Cursos\\T\\CNRegistoHorasMVC\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Miguel Correia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\mcorr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8651,6 +8646,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\Programas\\Syncfusion\\WinUI\\18.3.0.35\\NuGetPackages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

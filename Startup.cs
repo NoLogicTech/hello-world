@@ -42,6 +42,7 @@ namespace CNRegistoHorasMVC
 
             services.AddTransient<IValidator<Cliente>, ClienteValidator>();
 
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +70,7 @@ namespace CNRegistoHorasMVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Teste}/{action=Index}/{id?}");
+                endpoints.MapBlazorHub();
             });
         }
     }
